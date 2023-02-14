@@ -1,7 +1,7 @@
 import 'package:attsys/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/auth/login.dart';
+import '../screens/auth/signup_screen.dart';
 
 class MobileScreen extends StatefulWidget {
   const MobileScreen({super.key});
@@ -13,6 +13,6 @@ class MobileScreen extends StatefulWidget {
 class _MobileScreenState extends State<MobileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const LoginScreen();
+    return const SignUpScreen();
   }
 }

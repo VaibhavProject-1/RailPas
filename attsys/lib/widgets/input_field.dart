@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:flutter/services.dart';
 
 class InputField extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;
 
-  const InputField(
-      {super.key, required this.hintText, required this.controller});
+  const InputField({Key? key, required this.hintText, required this.controller}) : super(key: key);
 
   @override
   State<InputField> createState() => _InputFieldState();
