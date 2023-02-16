@@ -1,6 +1,7 @@
 import '../.././methods/auth_methods.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
+import '../table12.dart';
 
 import '../../widgets/input_field.dart';
 import 'signup_screen.dart';
@@ -86,7 +87,7 @@ void _login(String email, String password) async{
     {
       showFlushBar(context, result, "Successfully Logged in");
       Future.delayed(const Duration(seconds: 2),(){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Table12()));
       });
     }
     else

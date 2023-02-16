@@ -27,7 +27,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        return windows;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for windows - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -47,6 +50,7 @@ class DefaultFirebaseOptions {
     projectId: 'attendace-management-system',
     authDomain: 'attendace-management-system.firebaseapp.com',
     storageBucket: 'attendace-management-system.appspot.com',
+    measurementId: 'G-KFCPZDSNPB',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -75,14 +79,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'attendace-management-system.appspot.com',
     iosClientId: '954839568658-hgsrfgaegr9tglgjk75cn3kjnsi3m47i.apps.googleusercontent.com',
     iosBundleId: 'com.example.attsys',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyD1QvQhpvfzsk_jZGEETNaFt999xbmI784',
-    appId: '1:954839568658:web:184d46abf22690fad263cb',
-    messagingSenderId: '954839568658',
-    projectId: 'attendace-management-system',
-    authDomain: 'attendace-management-system.firebaseapp.com',
-    storageBucket: 'attendace-management-system.appspot.com',
   );
 }

@@ -29,6 +29,13 @@
             {
               "client_id": "954839568658-si80s4cs89me733fitc3hb83lhkj3fe8.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "954839568658-hgsrfgaegr9tglgjk75cn3kjnsi3m47i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.attsys"
+              }
             }
           ]
         }
