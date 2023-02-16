@@ -1,4 +1,7 @@
+import 'package:attsys/constants.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import '../models/user_model.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class AuthMethods{
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -29,7 +32,9 @@ class AuthMethods{
     })async{
       String result = "Some Error Occured";
       try{
-        await firebaseAuth.createUserWithEmailAndPassword( email: email, password: password);
+        UserCredential credential = await firebaseAuth.createUserWithEmailAndPassword( email: email, password: password);
+        UserModel userModel = UserModel(credential.user!.uid, userName.trim(), email, "", "", "", "", "", "", "");
+        await firebaseFirestore.collection('users').doc(credential.user!.uid).set(userModel.toJson());
         result="Success";
       }
       on FirebaseAuthException catch(e){

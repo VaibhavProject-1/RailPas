@@ -1,3 +1,4 @@
+import 'package:attsys/screens/image_setup.dart';
 import 'package:flutter/material.dart';
 import '../../constants.dart';
 import '../../widgets/input_field.dart';
@@ -51,7 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                         else
                         {                          
-                          _signUp(_usernameController.text,_emailController.text,_passwordController.text);
+                          _signUp(_usernameController.text.trim(),_emailController.text.trim(),_passwordController.text.trim());
                         }
 
 
@@ -84,7 +85,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-void _signUp(String email,String password,String username) async{
+void _signUp(String username,String email,String password) async{
   setState((){
     showFlushBar(context, "Wait", "Processing");
   });
@@ -94,7 +95,7 @@ void _signUp(String email,String password,String username) async{
     {
       showFlushBar(context, result, "Successfully Signed Up");
       Future.delayed(const Duration(seconds: 2),(){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const ImageSetup()));
       });
     }
     else

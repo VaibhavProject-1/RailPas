@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:another_flushbar/flushbar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,6 +10,7 @@ bool isWeb=false;
 bool isMobile=true;
 
 FirebaseAuth firebaseAuth= FirebaseAuth.instance;
+FirebaseFirestore firebaseFirestore= FirebaseFirestore.instance;
 
   void showFlushBar(BuildContext context, String topMessage, String bottomMessage)
   {
